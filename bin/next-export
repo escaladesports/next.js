@@ -57,7 +57,8 @@ if (!existsSync(join(dir, 'pages'))) {
 
 const options = {
   silent: argv.silent,
-  outdir: argv.outdir ? resolve(argv.outdir) : resolve(dir, 'out')
+  outdir: argv.outdir ? resolve(argv.outdir) : resolve(dir, 'out'),
+  cleanurls: argv.cleanurls
 }
 
 exportApp(dir, options)

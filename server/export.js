@@ -76,7 +76,7 @@ export default async function (dir, options) {
     dir,
     buildStats,
     buildId,
-    nextExport: true,
+	 nextExport: options.cleanurls ? false : true,
     assetPrefix: config.assetPrefix.replace(/\/$/, ''),
     dev: false,
     staticMarkup: false,
@@ -86,7 +86,7 @@ export default async function (dir, options) {
 
   // We need this for server rendering the Link component.
   global.__NEXT_DATA__ = {
-    nextExport: true
+    nextExport: options.cleanurls ? false : true
   }
 
   for (const path of exportPaths) {
